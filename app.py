@@ -3,7 +3,7 @@ import pandas as pd
 
 
 import pickle
-from PIL import Image
+
 import re
 
 from bs4 import BeautifulSoup
