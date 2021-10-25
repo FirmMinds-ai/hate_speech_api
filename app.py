@@ -1,37 +1,16 @@
 import numpy as np
 import pandas as pd
 
-
 import pickle
 
-import re
-
-from bs4 import BeautifulSoup
-from tqdm import tqdm
-import nltk
-import re
-from nltk.corpus import stopwords
 from flask import Flask, render_template, request, url_for
 from flask import jsonify
+
 # initiate flask
+
 app = Flask(__name__)
 
-def decontracted(phrase):
-    # specific
-    phrase = re.sub(r"won't", "will not", phrase)
-    phrase = re.sub(r"can\'t", "can not", phrase)
 
-    # general
-    phrase = re.sub(r"n\'t", " not", phrase)
-    phrase = re.sub(r"\'re", " are", phrase)
-    phrase = re.sub(r"\'s", " is", phrase)
-    phrase = re.sub(r"\'d", " would", phrase)
-    phrase = re.sub(r"\'ll", " will", phrase)
-    phrase = re.sub(r"\'t", " not", phrase)
-    phrase = re.sub(r"\'ve", " have", phrase)
-    phrase = re.sub(r"\'m", " am", phrase)
-
-    return phrase
 
 words = []
 path1 = "bad-words.csv"
