@@ -5,9 +5,10 @@ import pickle
 
 from flask import Flask, render_template, request, url_for
 from flask import jsonify
-
+from flask_cors import CORS
 # initiate flask
 
+CORS(app)
 app = Flask(__name__)
 
 
