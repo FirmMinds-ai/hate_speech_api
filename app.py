@@ -8,10 +8,10 @@ from flask import jsonify
 from flask_cors import CORS
 # initiate flask
 
-CORS(app)
 app = Flask(__name__)
 
 
+CORS(app)
 
 words = []
 path1 = "bad-words.csv"
